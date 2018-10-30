@@ -23,7 +23,7 @@ class ImenikTest {
         assertEquals("Hana Hanic", imenik.dajIme(br));
     }
 
-    /*@Test
+    @Test
     void naSlovo() {
         Imenik imenik = new Imenik();
         imenik.dodaj("Sara Sarac", new FiksniBroj(SARAJEVO, "123-156"));
@@ -32,7 +32,7 @@ class ImenikTest {
         imenik.dodaj("Jozo Jozic", new MobilniBroj(64, "987-654"));
         imenik.dodaj("John Smith", new MedunarodniBroj("+1", "23 45-67-89"));
         assertEquals( "1. Ivo Ivic - 061/321-645", imenik.naSlovo('I').trim());
-    }*/
+    }
 
    /* @Test
     void izGrada() {

@@ -9,6 +9,7 @@ public class Imenik extends HashMap {
     void dodaj(String ime, TelefonskiBroj broj){
         this.put(ime, broj);
         this.put(broj, ime);
+        //this.put(ime.substring(0,1), broj);
         this.ime = ime;
         this.broj = broj;
     }
@@ -21,6 +22,6 @@ public class Imenik extends HashMap {
       return s;
     }
     public String naSlovo(char s){
-        
+        return new String("Kako ovo???");
     }
 }
