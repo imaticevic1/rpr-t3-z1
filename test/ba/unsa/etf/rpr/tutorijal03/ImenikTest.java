@@ -1,11 +1,8 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.Set;
-
-import static ba.unsa.etf.rpr.tutorijal03.FiksniBroj.Grad.*;
 import static org.junit.jupiter.api.Assertions.*;
+import static ba.unsa.etf.rpr.tutorijal03.FiksniBroj.Grad.SARAJEVO;
 
 class ImenikTest {
 
@@ -15,7 +12,15 @@ class ImenikTest {
         imenik.dodaj("John Smith", new MedunarodniBroj("+1", "23 45-67-89"));
         imenik.dodaj("Hana Hanic", new FiksniBroj(SARAJEVO, "123-156"));
         imenik.dodaj("Meho Mehic", new FiksniBroj(SARAJEVO, "123-456"));
-        assertEquals("033/123-456", imenik.dajBroj("Meho Mehic"));
+        assertEquals("+1/23 45-67-89", imenik.dajBroj("John Smith"));
+    }
+    @Test
+    void dajImeTest(){
+        Imenik imenik = new Imenik();
+        imenik.dodaj("John Smith", new MedunarodniBroj("+1", "23 45-67-89"));
+        FiksniBroj br = new FiksniBroj(SARAJEVO, "123-156");
+        imenik.dodaj("Hana Hanic", br);
+        assertEquals("Hana Hanic", imenik.dajIme(br));
     }
 
     /*@Test

@@ -1,19 +1,19 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
 public class FiksniBroj extends TelefonskiBroj {
-    public enum Grad {BUGOJNO(030),BUSOVACA(030),DOBRETICI(030),DONJI_VAKUF(030),FOJNICA(030),GORNJI_VAKUF(030),JAJCE(030),
-        KISELJAK(030),KRESEVO(030),NOVI_TRAVNIK(030),TRAVNIK(030),VITEZ(030),
-    ODZAK(031),ORASJE(031),DOMALJAVAC_SAMAC(031),BREZA(032),DOBOJ_JUG(032),KAKANJ(032),MAGLAJ(032),OLOVO(032),
-        TESANJ(032),USORA(032),VARES(032),VISOKO(032),ZAVIDOVICI(032),
-    ZENICA(032),ZEPCE(032),SARAJEVO(033)/*,HADZICI,ILIDZA,ILIJAS,NOVI_GRAD,SARAJEVO,NOVO_SARAJEVO,STARI_GRAD,TRNOVO,VOGOSCA,
+    public enum Grad {BUGOJNO(30),BUSOVACA(30),DOBRETICI(30),DONJI_VAKUF(30),FOJNICA(30),GORNJI_VAKUF(30),JAJCE(30),
+        KISELJAK(30),KRESEVO(30),NOVI_TRAVNIK(30),TRAVNIK(30),VITEZ(30),
+    ODZAK(31),ORASJE(31),DOMALJAVAC_SAMAC(31),BREZA(32),DOBOJ_JUG(32),KAKANJ(32),MAGLAJ(32),OLOVO(32),
+        TESANJ(32),USORA(32),VARES(32),VISOKO(32),ZAVIDOVICI(32),
+    ZENICA(32),ZEPCE(32),SARAJEVO(33)/*,HADZICI,ILIDZA,ILIJAS,NOVI_GRAD,SARAJEVO,NOVO_SARAJEVO,STARI_GRAD,TRNOVO,VOGOSCA,
     BOSANSKO_GRAHOVO,DRVAR,GLAMOC,KUPRES,LIVNO,TOMISLAVGRAD,BANOVICI,CELIC,DOBOJ_ISTOK,
         GRACANICA,GRADACAC,KALESIJA,KLADANJ,LUKAVAC,SAPNA,SREBRENIK,TEOCEK,TUZLA,ZIVINICE,
     CAPLJINA,CITLUK,JABLANICA,KONJIC,MOSTAR,NEUM,PROZOR,RAVNO,STOLAC,BIHAC,BOSANSKA_KRUPA,BOSANSKI_PETROVAC,
     BUZIM,CAZIN,KLJUC,SANSKI_MOST,VELIKA_KLADUSA,GORAZDE,GRUDE,LJUBUSKI,POSUSJE,SIROKI_BRIJEG,BRCKO*/;
-    private final int levelCode;
-    private Grad (int levelCode) {this.levelCode = levelCode;}
-    public int getLevelCode(){
-    return this.levelCode;
+    private final int pozivni;
+    private Grad (int pozivni) {this.pozivni = pozivni;}
+    public int getPozivni(){
+    return this.pozivni;
     }
     }
     private Grad grad;
@@ -24,8 +24,10 @@ public class FiksniBroj extends TelefonskiBroj {
     }
     @Override
     public String ispisi(){
-        return new String(grad.getLevelCode() + "/" + broj);
+        System.out.println(grad.getPozivni());
+        return new String("0" + grad.getPozivni() + "/" + broj);
+
     }
     @Override
-    public int hashCode(){return 0;}
+    public int hashCode(){return 2;}
 }
