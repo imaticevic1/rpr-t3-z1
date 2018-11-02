@@ -1,8 +1,8 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
 import java.util.*;
-
-public class Imenik {
+import java.util.Set;
+public class Imenik implements Comparable{
     private HashMap<String, TelefonskiBroj> hmap = new HashMap<String, TelefonskiBroj>();
     private String ime;
     private TelefonskiBroj broj;
@@ -29,23 +29,42 @@ public class Imenik {
 
     public String naSlovo(char s) {
         String ss = "" + s;
-        String k = new String();
+        String k = new String("");
         int brojac = 1;
-        for (Map.Entry<String, TelefonskiBroj> par : hmap.entrySet())
-            if(par.getKey().substring(0,1)== ss){
-                k += brojac + ". " + par.getKey() + " - " + par.getValue().ispisi();
+        for (Map.Entry<String, TelefonskiBroj> par : hmap.entrySet()) {
+            if (par.getKey().substring(0, 1).equals(ss)) {
+                k += brojac + ". " + par.getKey() + " - " + par.getValue().ispisi() + "\n";
                 brojac++;
             }
+        }
             return k;
     }
-    /*public Set<String> izGrada(FiksniBroj.Grad g) {
-        Set<String> skup = new Set<String>() ;
+    public Set<String> izGrada(FiksniBroj.Grad g) {
+        Set<String> skup = new TreeSet<String>() ;
         for (Map.Entry<String, TelefonskiBroj> par : hmap.entrySet()){
-            if(par instanceof FiksniBroj){
-               return null;
+                if(par.getValue().ispisi().substring(1,3).equals(g.getPozivni())) {
+                    skup.add(par.getKey());
+                }
+        }
+        return skup;
+    }
+    public Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g){
+        Set<TelefonskiBroj> skup = new TreeSet<TelefonskiBroj>() ;
+        for (Map.Entry<String, TelefonskiBroj> par : hmap.entrySet()){
+            if(par.getValue().ispisi().substring(1,3).equals(g.getPozivni())) {
+                skup.add(par.getValue());
             }
         }
-        return null;*/
-    }*/
+        return skup;
+    }
 
+    @Override
+    public int compareTo(Object o) {
+        TelefonskiBroj broj = (TelefonskiBroj) o;
+        for (Map.Entry<String, TelefonskiBroj> par : this.hmap.entrySet()){
+                return par.getValue().ispisi().compareTo(((TelefonskiBroj) o).ispisi());
+        }
+        return 0;
+    }
 }
+
