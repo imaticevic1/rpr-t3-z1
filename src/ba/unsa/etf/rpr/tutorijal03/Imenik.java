@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr.tutorijal03;
 
 import java.util.*;
 import java.util.Set;
-public class Imenik implements Comparable{
+public class Imenik {
     private HashMap<String, TelefonskiBroj> hmap = new HashMap<String, TelefonskiBroj>();
     private String ime;
     private TelefonskiBroj broj;
@@ -48,6 +48,7 @@ public class Imenik implements Comparable{
         }
         return skup;
     }
+
     public Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g){
         Set<TelefonskiBroj> skup = new TreeSet<TelefonskiBroj>() ;
         for (Map.Entry<String, TelefonskiBroj> par : hmap.entrySet()){
@@ -56,15 +57,6 @@ public class Imenik implements Comparable{
             }
         }
         return skup;
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        TelefonskiBroj broj = (TelefonskiBroj) o;
-        for (Map.Entry<String, TelefonskiBroj> par : this.hmap.entrySet()){
-                return par.getValue().ispisi().compareTo(((TelefonskiBroj) o).ispisi());
-        }
-        return 0;
     }
 }
 

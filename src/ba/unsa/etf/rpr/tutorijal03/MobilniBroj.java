@@ -12,6 +12,4 @@ public class MobilniBroj extends TelefonskiBroj {
     public String ispisi(){
         return new String("0" + mobilnaMreza + "/" + broj);
     }
-    @Override
-    public int hashCode(){return 3;}
 }
