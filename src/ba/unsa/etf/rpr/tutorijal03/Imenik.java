@@ -7,7 +7,7 @@ public class Imenik {
     private String ime;
     private TelefonskiBroj broj;
 
-    void dodaj(String im, TelefonskiBroj br) {
+    public void dodaj(String im, TelefonskiBroj br) {
         this.ime = im;
         this.broj = br;
         hmap.put(ime, broj);
