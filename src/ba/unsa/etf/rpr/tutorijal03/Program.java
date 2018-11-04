@@ -16,7 +16,7 @@ public class Program {
                 k = ulaz.nextInt();
                 switch(k) {
                     case 1:
-                        System.out.println("Unesite podatke osobe u obliku\nIme i prezime\nBroj\nGrad");
+                        System.out.println("Unesite podatke osobe u obliku\nIme i prezime\nTelefonski broj\nGrad");
                         new String(ulaz.nextLine());
                         String imePrezime = ulaz.nextLine();
                         String broj = ulaz.nextLine();
@@ -28,10 +28,11 @@ public class Program {
                         upisuj = 2 - v;
                         break;
                     case 2:
-                        System.out.println("Unesite podatke osobe u obliku\nIme i prezime\nMobilna mreza\nBroj");
+                        System.out.println("Unesite podatke osobe u obliku\nIme i prezime\nMobilna mreza\nMobilni broj");
                         new String(ulaz.nextLine());
                         String imePrezime1 = ulaz.nextLine();
                         int mobilnaMreza = ulaz.nextInt();
+                        new String(ulaz.nextLine());
                         String broj1 = ulaz.nextLine();
                         imenik.dodaj(imePrezime1, new MobilniBroj(mobilnaMreza, broj1));
                         System.out.println("Nastaviti unos?\n1)Da\n2)Ne");
@@ -39,11 +40,11 @@ public class Program {
                         upisuj = 2 - v1;
                         break;
                     default:
-                        System.out.println("Uspješno ste završili kreiranje telefonskog imenika!");
                         return;
                 }
                 break;
-                default: return;
+                default:
+                    return;
                 }
         }
     }
