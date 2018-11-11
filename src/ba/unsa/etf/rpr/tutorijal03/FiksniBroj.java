@@ -33,12 +33,11 @@ public class FiksniBroj extends TelefonskiBroj implements Comparable {
     @Override
     public String ispisi(){
         System.out.println(grad.getPozivni());
-        return new String("0" + grad.getPozivni() + "/" + broj);
+        return "0" + grad.getPozivni() + "/" + broj;
 
     }
     @Override
     public int compareTo(Object o) {
-        TelefonskiBroj broj = (TelefonskiBroj) o;
         return this.ispisi().compareTo(((TelefonskiBroj) o).ispisi());
     }
 }
